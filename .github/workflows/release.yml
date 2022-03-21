@@ -10,12 +10,12 @@ jobs:
       NPM_TOKEN: ${{ secrets.REGISTRY_AUTH_TOKEN }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
          # https://github.com/actions/checkout#Fetch-all-history-for-all-tags-and-branches
          # pulls all commits (needed for lerna / semantic release to correctly version)
          fetch-depth: "0"
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
